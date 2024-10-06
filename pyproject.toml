@@ -2,15 +2,13 @@
 name = "kafka-acl-wrapper"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Theodore Gautama Chandra <theoengphys@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
-typer = "^0.12.4"
-confluent-kafka = "^2.5.0"
-cryptography = "41.0.3"
-
+python = "^3.10"
+typer = "^0.12.5"
+confluent-kafka = "2.0.2"
 
 [build-system]
 requires = ["poetry-core"]
