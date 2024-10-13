@@ -1,0 +1,7 @@
+TOPIC_DESCRIPTION = 'Kafka Topic Name, if left empty command will not search for topic'
+GROUP_DESCRIPTION = 'Kafka Group Name, if left empty command will not search for group'
+CONSUMER_DESCRIPTION = 'Kafka Consumer Role, ACL will include READ and DESCRIBE permission'
+PRODUCER_DESCRIPTION = 'Kafka Producer Role, ACL will include WRITE, DESCRIBE and CREATE permission'
+OPERATIONS_DESCRIPTION = 'Kafka operations list for custom operation groups, comma separated list of operations such as READ, WRITE, DESCRIBE, CREATE, DELETE, ALTER, DESCRIBE_CONFIGS, ALTER_CONFIGS '
+PRINCIPAL_DESCRIPTION = 'Kafka Prinicpal Name'
+PREFIXED_DESCRIPTION = 'flag to search for PREFIXED type ACLs, this is a specific kafka PREFIXED type, it will not search LITERAL ACLs'

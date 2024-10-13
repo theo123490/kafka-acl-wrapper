@@ -1,7 +1,9 @@
 import typer
 import config
 import acl_bindings
+import common_docs
 from utility import *
+
 
 app = typer.Typer(name="kafka-acl-wrapper", pretty_exceptions_show_locals=False)
 
@@ -17,13 +19,13 @@ def populate_acl_binding_options(admin, topic, principal, group, consumer, produ
     return acl_binding_options
 
 @app.command()
-def get(topic: str = typer.Option("", "--topic"), 
-        principal: str = typer.Option("", "--principal"),
-        group: str = typer.Option("", "--group"),
-        consumer: bool = typer.Option(False, "--consumer"),
-        producer: bool = typer.Option(False, "--producer"),
-        operations: str = typer.Option("", "--operations"),
-        prefixed: bool = typer.Option(False, "--prefixed"),
+def get(topic: str = typer.Option("", "--topic", help = common_docs.TOPIC_DESCRIPTION), 
+        principal: str = typer.Option("", "--principal", help = common_docs.PRINCIPAL_DESCRIPTION),
+        group: str = typer.Option("", "--group", help = common_docs.GROUP_DESCRIPTION),
+        consumer: bool = typer.Option(False, "--consumer", help = common_docs.CONSUMER_DESCRIPTION),
+        producer: bool = typer.Option(False, "--producer", help = common_docs.PRODUCER_DESCRIPTION),
+        operations: str = typer.Option("", "--operations", help = common_docs.OPERATIONS_DESCRIPTION),
+        prefixed: bool = typer.Option(False, "--prefixed", help = common_docs.PREFIXED_DESCRIPTION),
         args: str = typer.Argument("")
         ):
     if (topic + principal + group + args == ""):
@@ -42,13 +44,13 @@ def get(topic: str = typer.Option("", "--topic"),
             print(acls)
 
 @app.command()
-def create(topic: str = typer.Option("", "--topic"), 
-           principal: str = typer.Option("", "--principal"),
-           group: str = typer.Option("", "--group"),
-           consumer: bool = typer.Option(False, "--consumer"),
-           producer: bool = typer.Option(False, "--producer"),
-           operations: str = typer.Option("", "--operations"),
-           prefixed: bool = typer.Option(False, "--prefixed"),
+def create(topic: str = typer.Option("", "--topic", help = common_docs.TOPIC_DESCRIPTION), 
+           principal: str = typer.Option("", "--principal", help = common_docs.PRINCIPAL_DESCRIPTION),
+           group: str = typer.Option("", "--group", help = common_docs.GROUP_DESCRIPTION),
+           consumer: bool = typer.Option(False, "--consumer", help = common_docs.CONSUMER_DESCRIPTION),
+           producer: bool = typer.Option(False, "--producer", help = common_docs.PRODUCER_DESCRIPTION),
+           operations: str = typer.Option("", "--operations", help = common_docs.OPERATIONS_DESCRIPTION),
+           prefixed: bool = typer.Option(False, "--prefixed", help = common_docs.PREFIXED_DESCRIPTION),
            args: str = typer.Argument("")
            ):
     if (topic + principal + group + args == ""):
@@ -60,13 +62,13 @@ def create(topic: str = typer.Option("", "--topic"),
     create_acl_bindings(acl_bind_opts=acl_binding_options)
 
 @app.command()
-def delete(topic: str = typer.Option("", "--topic"), 
-           principal: str = typer.Option("", "--principal"),
-           group: str = typer.Option("", "--group"),
-           consumer: bool = typer.Option(False, "--consumer"),
-           producer: bool = typer.Option(False, "--producer"),
-           operations: str = typer.Option("", "--operations"),
-           prefixed: bool = typer.Option(False, "--prefixed"),
+def delete(topic: str = typer.Option("", "--topic", help = common_docs.TOPIC_DESCRIPTION), 
+           principal: str = typer.Option("", "--principal", help = common_docs.PRINCIPAL_DESCRIPTION),
+           group: str = typer.Option("", "--group", help = common_docs.GROUP_DESCRIPTION),
+           consumer: bool = typer.Option(False, "--consumer", help = common_docs.CONSUMER_DESCRIPTION),
+           producer: bool = typer.Option(False, "--producer", help = common_docs.PRODUCER_DESCRIPTION),
+           operations: str = typer.Option("", "--operations", help = common_docs.OPERATIONS_DESCRIPTION),
+           prefixed: bool = typer.Option(False, "--prefixed", help = common_docs.PREFIXED_DESCRIPTION),
            args: str = typer.Argument("")
            ):
     if (topic + principal + group + args == ""):
