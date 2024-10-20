@@ -5,7 +5,7 @@ import common_docs
 from utility import *
 
 
-app = typer.Typer(name="kafka-acl-wrapper", pretty_exceptions_show_locals=False)
+app = typer.Typer(name="kafka-acl-wrapper", pretty_exceptions_show_locals=False, add_completion=False)
 
 def populate_acl_binding_options(admin, topic, principal, group, consumer, producer, operations, prefixed):
     acl_binding_options = acl_bindings.acl_binding_options(admin)
