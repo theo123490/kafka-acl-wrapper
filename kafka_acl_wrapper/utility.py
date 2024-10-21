@@ -6,7 +6,7 @@ import confluent_kafka.error
 import copy
 import confluent_kafka.error
 import copy
-import acl_bindings
+from . import acl_bindings
 import typer
 import re
 
