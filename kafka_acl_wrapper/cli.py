@@ -28,6 +28,10 @@ def get(topic: str = typer.Option("", "--topic", help = common_docs.TOPIC_DESCRI
         prefixed: bool = typer.Option(False, "--prefixed", help = common_docs.PREFIXED_DESCRIPTION),
         args: str = typer.Argument("")
         ):
+    """
+    Get a list of kafka acls based on given parameters
+    """
+
     if (topic + principal + group + args == ""):
         print("[red]require at least one argument from --topic / --principal / --group[/red]")
         raise typer.Abort()
@@ -53,6 +57,9 @@ def create(topic: str = typer.Option("", "--topic", help = common_docs.TOPIC_DES
            prefixed: bool = typer.Option(False, "--prefixed", help = common_docs.PREFIXED_DESCRIPTION),
            args: str = typer.Argument("")
            ):
+    """
+    Create kafka ACLs
+    """
     if (topic + principal + group + args == ""):
         print("[red]require at least one argument from --topic / --principal / --group[/red]")
         raise typer.Abort()
@@ -71,6 +78,9 @@ def delete(topic: str = typer.Option("", "--topic", help = common_docs.TOPIC_DES
            prefixed: bool = typer.Option(False, "--prefixed", help = common_docs.PREFIXED_DESCRIPTION),
            args: str = typer.Argument("")
            ):
+    """
+    Delete kafka ACLs
+    """
     if (topic + principal + group + args == ""):
         print("[red]require at least one argument from --topic / --principal / --group[/red]")
         raise typer.Abort()
