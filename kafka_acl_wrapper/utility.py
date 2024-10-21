@@ -65,7 +65,6 @@ def create_acl_bindings(acl_bind_opts: acl_bindings.acl_binding_options):
     acl_binding_list = create_acl_binding_list(acl_bind_opts=acl_bind_opts)
     
     print(f"creating these acl bindings: \n")
-    # print(f" \n \n found acls from filter:\n")
     for acl in acl_binding_list:
         print_acl(acl)
 
