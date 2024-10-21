@@ -1,9 +1,8 @@
 import typer
-import config
-import acl_bindings
-import common_docs
-from utility import *
-
+from . import config
+from . import acl_bindings
+from . import common_docs
+from . utility import *
 
 app = typer.Typer(name="kafka-acl-wrapper", pretty_exceptions_show_locals=False, add_completion=False)
 
@@ -100,4 +99,3 @@ def delete(topic: str = typer.Option("", "--topic", help = common_docs.TOPIC_DES
         delete_acl_bindings(acl_bind_opts=acl_binding_options)
     else:
         print("[red] canceling delete operations [/red]")
-
