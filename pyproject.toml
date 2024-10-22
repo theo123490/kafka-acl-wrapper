@@ -13,3 +13,6 @@ confluent-kafka = "2.0.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+kafka-acl-wrapper = "kafka_acl_wrapper.main:kafka_acl_wrapper"
